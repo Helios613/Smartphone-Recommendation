@@ -1,0 +1,77 @@
+.preferences{
+    margin:10px;
+
+}
+#mymultiselect{
+    width:150px;
+    height:165px;
+    overflow:hidden;
+}
+table{
+    width:100%;
+}
+.frm{
+    padding-top:20px;
+    width:100%;
+    background-color: transparent;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    
+}
+
+#Submit_button{
+    margin-left:10px;
+}
+
+#price{
+    width:80px;
+    height:22.5px;
+}
+
+td {
+    width: auto;
+    max-width: 200px;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    }
+
+.phonename{
+    display: inline-block;
+    width: auto;
+    overflow:initial;
+    white-space: nowrap;
+}
+th {
+    width: auto;
+    text-align: center;
+    max-width: 120px;
+    border: 2px solid black;
+    padding: 5px;
+    }
+
+.container{
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    margin-top:60px;
+    position:relative;
+    height: 150px;
+    width:auto;
+    overflow:hide;
+}
+
+.pref-head{
+    margin:auto auto;
+}
+
+.body{
+    width:auto;
+    height:690px;
+    background-color: rgb(250, 250, 250);
+}
+
+h4{
+    margin-right:10px;
+}

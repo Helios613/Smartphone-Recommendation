@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    {% block title %}{%endblock title%}
+    {% block sheets %}{% endblock sheets %}
+    <style>
+        .local:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <h2 class="nav-header-title">Smartphone Recommendation</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link local" aria-current="page" href="/update">Update Database</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link local" href="plots">Preferences</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link local" href="visualization">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link local" href="database">Database</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link local" href="about">About</a>
+                    </li>
+                </ul>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+
+    {% endblock body %}
+</body>
+
+</html>

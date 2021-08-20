@@ -1,0 +1,19 @@
+.plots{
+    background-color: transparent;
+    width: 50%;
+    min-width: 50%;
+    height: calc(25vw * 1.72);
+    margin: 20px;
+    border: 2px solid rgb(109, 108, 108);
+
+}
+
+.containers{
+    width:100%;
+    height:fit-content;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
+}

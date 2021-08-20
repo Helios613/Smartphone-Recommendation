@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}<title>Database</title>{%endblock title%}
+{% block sheets %}
+<style>
+
+.plots{
+    background-color: transparent;
+    width: 100%;
+    height: calc(25vw * 1.72);
+    margin-bottom: 20px;
+    margin-top:30px;
+    }
+
+td {
+    width: auto;
+    max-width: 200px;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    }
+th {
+    width: auto;
+    text-align: center;
+    max-width: 120px;
+    border: 2px solid black;
+    padding: 5px;
+    }
+.sticky{
+    position:sticky;
+    color:blue;
+}
+.container{
+    margin-top:5px;
+    position:relative;
+    height: 500px;
+    width:fit-content;
+    overflow:scroll;
+}
+#inputlabel{
+    display:inline-block;
+    margin-right: 5px;
+    padding-top: 2px;
+}
+#myInput{
+    display:inline-block;
+}
+.search{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+}
+</style>
+{% endblock sheets %}
+{% block body %}
+<div class="container">
+<div class="search">
+    <label for="myInput" id="inputlabel">Search</label>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for smartphones" title="Type in a name">
+</div>
+<table id="myTable">
+    
+    <thead>
+            <tr>
+                <th>Phone</th>
+                <th>Price</th>
+                <th>Performance</th>
+                <th>Antutu</th>
+                <th>Geekbench5 Multicore</th>
+                <th>Geekbench5 Singlecore</th>
+                <th>Camera</th>
+                <th>Battery</th>
+                <th>Connectivity</th>
+                <th>Display</th>
+                <th>Software</th>
+                <th>Sound</th>
+                <th>Update Date</th>
+            </tr>
+    
+
+    <tbody>
+        {% for row in data %}    
+                <tr>
+                    <td>{{row[9]}}</td>
+                    <td>{{row[10]}}</td>
+                    <td>{{row[8]}}</td>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[11]}}</td>
+                    <td>{{row[12]}}</td>
+                    <td>{{row[13]}}</td>
+                </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            } 
+            else {
+                tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+</div>
+<div class=" plots " id="parcoord ">
+    <object width=100% height=100% data="parcoord"></object>
+</div>
+
+{% endblock body %}
